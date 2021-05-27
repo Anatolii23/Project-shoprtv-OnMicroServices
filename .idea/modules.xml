@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/ClientServicesApplication/ClientServicesApplication.iml" filepath="$PROJECT_DIR$/ClientServicesApplication/ClientServicesApplication.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/FinalProjectOnMicroServices.iml" filepath="$PROJECT_DIR$/.idea/FinalProjectOnMicroServices.iml" />
+      <module fileurl="file://$PROJECT_DIR$/OrderServicesApplication/OrderServicesApplication.iml" filepath="$PROJECT_DIR$/OrderServicesApplication/OrderServicesApplication.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ProductServicesApplication/ProductServicesApplication.iml" filepath="$PROJECT_DIR$/ProductServicesApplication/ProductServicesApplication.iml" />
+      <module fileurl="file://$PROJECT_DIR$/eureka/eureka.iml" filepath="$PROJECT_DIR$/eureka/eureka.iml" />
+    </modules>
+  </component>
+</project>

@@ -1,0 +1,5 @@
+# Project exclude paths
+/ClientServicesApplication/target/
+/eureka/target/
+/OrderServicesApplication/target/
+/ProductServicesApplication/target/

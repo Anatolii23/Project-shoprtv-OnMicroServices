@@ -1,0 +1,31 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd
+        http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+    <changeSet author="Anatolii" id="create-tables">
+        <createTable tableName="typeOfProduct">
+            <column name="id" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="type" type="varchar(255)"/>
+        </createTable>
+        <createTable tableName="product">
+            <column name="id" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="name" type="varchar(255)"/>
+            <column name="price" type="int"/>
+            <column name="typeId" type="bigint"/>
+        </createTable>
+        <addForeignKeyConstraint
+                baseTableName="product"
+                baseColumnNames="typeId"
+                constraintName="fk_typeProduct_product_id"
+                referencedTableName="typeofproduct"
+                referencedColumnNames="id"/>
+    </changeSet>
+</databaseChangeLog>

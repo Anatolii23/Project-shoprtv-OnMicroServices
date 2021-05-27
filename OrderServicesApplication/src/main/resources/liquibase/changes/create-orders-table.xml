@@ -1,0 +1,34 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd
+        http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+    <changeSet author="Anatolii" id="create-all-tables">
+        <createTable tableName="Detailed">
+            <column name="id" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="quantity" type="int"/>
+            <column name="orderId" type="bigint"/>
+            <column name="productId" type="bigint"/>
+        </createTable>
+        <createTable tableName="orders">
+            <column name="id" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="clientId" type="bigint"/>
+            <column name="status" type="varchar(255)"/>
+            <column name="price" type="int"/>
+            <column name="data" type="Timestamp"/>
+        </createTable>
+        <addForeignKeyConstraint
+                baseTableName="detailed"
+                baseColumnNames="orderId"
+                constraintName="fk_order_detailed_id"
+                referencedTableName="orders"
+                referencedColumnNames="id"/>
+    </changeSet>
+</databaseChangeLog>
